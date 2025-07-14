@@ -53,6 +53,12 @@ class TravelTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if travelInfo.travel[indexPath.row].ad {
+            showToast()
+        }
+    }
+    
     @objc func likedTapped(sender: UIButton) {
         travelInfo.travel[sender.tag].like?.toggle()
         tableView.reloadData()
