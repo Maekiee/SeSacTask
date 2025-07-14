@@ -1,6 +1,7 @@
 import UIKit
 import Kingfisher
 
+
 class TravelTableViewController: UITableViewController {
     var travelInfo = TravelInfo()
 
@@ -8,6 +9,14 @@ class TravelTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "SeSAC Travel"
         tableView.rowHeight = 164
+        
+        
+        let xib = UINib(nibName: "AdTableViewCell", bundle: nil)
+        tableView.register(xib, forCellReuseIdentifier: "AdTableViewCell")
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -15,20 +24,25 @@ class TravelTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! TravelTableViewCell
+        // 분기처리별 타입 캐스팅
+        let travelData = travelInfo.travel[indexPath.row]
+        
+        let adCell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath)  as! AdTableViewCell
+        let cardCell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)  as! TravelTableViewCell
+        
         
         // 썸네일 이미지
         let thumbnailUrl = URL(string: travelInfo.travel[indexPath.row].travel_image ?? "")
-        cell.thumbnailImageView.kf.setImage(with: thumbnailUrl, placeholder: UIImage(named: "comming_soon"))
+        cardCell.thumbnailImageView.kf.setImage(with: thumbnailUrl, placeholder: UIImage(named: "comming_soon"))
         
         // 타이틀
-        cell.titleLabel.text = travelInfo.travel[indexPath.row].title
-        cell.descriptionLabel.text = travelInfo.travel[indexPath.row].description
+        cardCell.titleLabel.text = travelData.title
+        cardCell.descriptionLabel.text = travelData.description
         
         // 평점 별
-        if let grade = travelInfo.travel[indexPath.row].grade {
+        if let grade = travelData.grade {
             let gradePoint = Double(grade)
-            for (index, imageView) in cell.starImageViews.enumerated() {
+            for (index, imageView) in cardCell.starImageViews.enumerated() {
                 let starPoint = Double(index )
                 
                 if gradePoint >= starPoint + 1{
@@ -38,33 +52,42 @@ class TravelTableViewController: UITableViewController {
                 } else {
                     imageView.image = UIImage(systemName: "star")
                 }
+                
             }
         } else {
-            cell.starImageViews.forEach { $0.image = UIImage(systemName: "star") }
+            cardCell.starImageViews.forEach { $0.image = UIImage(systemName: "star") }
         }
         
         // 저장 및 리뷰작성자 수
-        if let reviewer = travelInfo.travel[indexPath.row].reviewers,
-           let saved = travelInfo.travel[indexPath.row].save {
+        if let reviewer = travelData.reviewers,
+           let saved = travelData.save {
             let reviewerString = formatNumber(num: reviewer)
             let savedString = formatNumber(num: saved)
-            cell.countsLabel.text = "(\(reviewerString)) · 저장 \(savedString)"
+            cardCell.countsLabel.text = "(\(reviewerString)) · 저장 \(savedString)"
         } else {
-            cell.countsLabel.text = ""
+            cardCell.countsLabel.text = ""
         }
         
         // 좋아요
-        if let isLiked = travelInfo.travel[indexPath.row].like {
-            cell.likeButton.isHidden = false
-            cell.likeButton.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"), for: .normal)
-            cell.likeButton.addTarget(self, action: #selector(likedTapped), for: .touchUpInside)
-            cell.likeButton.tag = indexPath.row
-            cell.likeButton.tintColor = isLiked ? .red : .white
+        if let isLiked = travelData.like {
+            cardCell.likeButton.isHidden = false
+            cardCell.likeButton.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"), for: .normal)
+            cardCell.likeButton.addTarget(self, action: #selector(likedTapped), for: .touchUpInside)
+            cardCell.likeButton.tag = indexPath.row
+            cardCell.likeButton.tintColor = isLiked ? .red : .white
         } else {
-            cell.likeButton.isHidden = true
+            cardCell.likeButton.isHidden = true
+        }
+        
+        adCell.adLabel.text = "광고 입니다 광고 광고 광고 광고 광고"
+        
+        if indexPath.row % 4 == 0 {
+            return adCell
+        } else {
+            return cardCell
         }
        
-        return cell
+//        return cardCell
     }
     
     @objc func likedTapped(sender: UIButton) {

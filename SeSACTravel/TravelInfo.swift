@@ -8,7 +8,7 @@ struct Travel {
     let grade: Double?
     let save: Int?
     var like: Bool?
-//    let ad: Bool?
+    let ad: Bool
 }
 
 
@@ -20,8 +20,8 @@ struct TravelInfo {
                reviewers: 3,
                grade: 4.8,
                save: 6932,
-               like: false
-//               ad: false
+               like: false,
+               ad: false
               ),
         Travel(title: "쿠알로아 랜치",
                description: "광활한 대자연에서 즐기는 다양하고 재미있는 액티비티",
@@ -29,8 +29,8 @@ struct TravelInfo {
                reviewers: 3,
                grade: 4.9,
                save: 5167,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "알라 모아나 센터",
                description: "하와이 최고의 쇼핑 명소",
@@ -38,8 +38,8 @@ struct TravelInfo {
                reviewers: 3,
                grade: 3.8,
                save: 8262,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "와이키키 비치",
                description: "세계적으로 유명한 하와이 최고의 해변",
@@ -47,8 +47,8 @@ struct TravelInfo {
                reviewers: 10,
                grade: 4.2,
                save: 7892,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "하와이 여행을 가고싶다면?\n수업이 있는데 가실 생각은 아니시죠?",
                description: nil,
@@ -56,8 +56,8 @@ struct TravelInfo {
                reviewers: nil,
                grade: nil,
                save: nil,
-               like: nil
-//               ad: true
+               like: nil,
+               ad: true
               ),
         Travel(title: "철도 박물관",
                description: "일본 철도의 역사를 둘러볼 수 있는 박물관",
@@ -65,8 +65,8 @@ struct TravelInfo {
                reviewers: 1812,
                grade: 2.8,
                save: 3,
-               like: false
-//               ad: false
+               like: false,
+               ad: false
               ),
         Travel(title: "도쿄 디즈니랜드",
                description: "월트 디즈니가 창조한 동화 속 세상",
@@ -74,8 +74,8 @@ struct TravelInfo {
                reviewers: 1556,
                grade: 4.7,
                save: 26076,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "도쿄 타워",
                description: "아름다운 전망을 즐길 수 있는 도쿄의 상징",
@@ -83,8 +83,8 @@ struct TravelInfo {
                reviewers: 231,
                grade: 4.1,
                save: 37077,
-               like: false
-//               ad: false
+               like: false,
+               ad: false
               ),
         Travel(title: "도쿄 여행 예약은?\nXcode로 직접 예약앱을 만들면 되겠네요!",
                description: nil,
@@ -92,8 +92,8 @@ struct TravelInfo {
                reviewers: nil,
                grade: nil,
                save: nil,
-               like: nil
-//               ad: true
+               like: nil,
+               ad: true
               ),
         Travel(title: "동문 재래 시장",
                description: "먹거리와 생활용품을 판매하는, 제주에서 가장 큰 시장",
@@ -101,8 +101,8 @@ struct TravelInfo {
                reviewers: 120,
                grade: 4.0,
                save: 67696,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "제주 국제공항",
                description: "면세점이 있어 더욱 사랑받는, 제주 여행의 시작과 끝을 함께하는 공항",
@@ -110,8 +110,8 @@ struct TravelInfo {
                reviewers: 9,
                grade: 4.8,
                save: 18817,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "서귀포 매일 올레 시장",
                description: "다양한 농수산물, 잡화, 먹거리를 판매하는 재래 시장",
@@ -119,8 +119,8 @@ struct TravelInfo {
                reviewers: 6,
                grade: 3.9,
                save: 45399,
-               like: false
-//               ad: false
+               like: false,
+               ad: false
               ),
         Travel(title: "성산일출봉",
                description: "유네스코 세계 자연 유산에 등재된, 제주 최고의 일출 명소",
@@ -128,8 +128,8 @@ struct TravelInfo {
                reviewers: 3,
                grade: 4.9,
                save: 44507,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
         Travel(title: "제주 비행기 최저가! 예약 문의는 취업부터!",
                description: nil,
@@ -137,8 +137,8 @@ struct TravelInfo {
                reviewers: nil,
                grade: nil,
                save: nil,
-               like: nil
-//               ad: true
+               like: nil,
+               ad: true
               ),
         Travel(title: "영등포 캠퍼스",
                description: "Jack님과 함께하는,\n우당탕탕 iOS 개발 성장기!",
@@ -146,8 +146,8 @@ struct TravelInfo {
                reviewers: 300,
                grade: 5.0,
                save: 30,
-               like: true
-//               ad: false
+               like: true,
+               ad: false
               ),
     ]
 }
