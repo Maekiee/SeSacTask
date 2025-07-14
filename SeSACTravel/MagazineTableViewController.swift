@@ -8,9 +8,10 @@ class MagazineTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 400
         tableView.separatorStyle = .none
         title = "SeSAC TRAVEL"
+        
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +34,8 @@ class MagazineTableViewController: UITableViewController {
         cell.thumbnailImageView.kf.setImage(with: thumbnailUrl)
         cell.titleLabel.text = magazineData.magazine[indexPath.row].title
         cell.subtitleLabel.text = magazineData.magazine[indexPath.row].subtitle
+        cell.titleLabel.numberOfLines = 0
+        cell.subtitleLabel.numberOfLines = 0
     
         return cell
     }
