@@ -17,6 +17,7 @@ class MagazineTableViewController: UITableViewController {
         return magazineData.magazine.count
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as! MagazineTableViewCell
         
