@@ -116,8 +116,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="countsLabel" destination="L4b-i1-oCZ" id="ZdW-Fc-7LE"/>
+                <outlet property="descriptionLabel" destination="UKS-AV-jLZ" id="m2x-dv-Fb3"/>
                 <outlet property="likeButton" destination="aBz-ZC-AYd" id="NIx-Ta-Fpo"/>
-                <outlet property="subtitleLabel" destination="UKS-AV-jLZ" id="m2x-dv-Fb3"/>
                 <outlet property="thumbnailImageView" destination="sCM-UA-Uxn" id="EwX-Aq-rsD"/>
                 <outlet property="titleLabel" destination="c6U-1t-xX5" id="Ocd-8M-d4k"/>
                 <outletCollection property="starImageViews" destination="SH4-S9-FYd" collectionClass="NSMutableArray" id="SI6-P6-Cki"/>

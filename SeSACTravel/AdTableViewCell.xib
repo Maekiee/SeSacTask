@@ -20,17 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzl-eR-FO0">
                         <rect key="frame" x="8" y="8" width="304" height="102"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDe-Ya-ii9">
-                                <rect key="frame" x="258" y="4" width="42" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="tVl-xV-owK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-2f-5XJ">
-                                <rect key="frame" x="8" y="8" width="288" height="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-2f-5XJ">
+                                <rect key="frame" x="42" y="23" width="208" height="57"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,8 +30,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="g6S-2f-5XJ" firstAttribute="top" secondItem="Tzl-eR-FO0" secondAttribute="top" constant="8" id="CgX-XL-PWu"/>
-                            <constraint firstAttribute="trailing" secondItem="eDe-Ya-ii9" secondAttribute="trailing" constant="4" id="TEZ-ol-wIp"/>
-                            <constraint firstItem="eDe-Ya-ii9" firstAttribute="top" secondItem="Tzl-eR-FO0" secondAttribute="top" constant="4" id="UEt-aZ-BfD"/>
                             <constraint firstItem="g6S-2f-5XJ" firstAttribute="leading" secondItem="Tzl-eR-FO0" secondAttribute="leading" constant="8" id="kMw-BA-LLg"/>
                             <constraint firstAttribute="trailing" secondItem="g6S-2f-5XJ" secondAttribute="trailing" constant="8" id="rS4-cO-Jbj"/>
                             <constraint firstAttribute="bottom" secondItem="g6S-2f-5XJ" secondAttribute="bottom" constant="8" id="sdR-Qd-S4A"/>
@@ -58,7 +47,6 @@
             <connections>
                 <outlet property="adCellContainer" destination="Tzl-eR-FO0" id="Oew-mN-6dB"/>
                 <outlet property="adLabel" destination="g6S-2f-5XJ" id="pHb-Yy-r9t"/>
-                <outlet property="adTagLabel" destination="g6S-2f-5XJ" id="VQN-Ps-lmf"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="45.774647887323944"/>
         </tableViewCell>
