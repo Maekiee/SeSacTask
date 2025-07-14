@@ -13,6 +13,10 @@ class TravelTableViewController: UITableViewController {
         
         let xib = UINib(nibName: "AdTableViewCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: "AdTableViewCell")
+        
+        let cardTableViewCellXIB = UINib(nibName: "TravelCardTableViewCell", bundle: nil)
+        tableView.register(cardTableViewCellXIB, forCellReuseIdentifier: "TravelCardTableViewCell")
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,7 +32,7 @@ class TravelTableViewController: UITableViewController {
         let travelData = travelInfo.travel[indexPath.row]
         
         let adCell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath)  as! AdTableViewCell
-        let cardCell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)  as! TravelTableViewCell
+        let cardCell = tableView.dequeueReusableCell(withIdentifier: "TravelCardTableViewCell", for: indexPath)  as! TravelCardTableViewCell
         
         
         // 썸네일 이미지
@@ -37,7 +41,7 @@ class TravelTableViewController: UITableViewController {
         
         // 타이틀
         cardCell.titleLabel.text = travelData.title
-        cardCell.descriptionLabel.text = travelData.description
+//        cardCell.descriptionLabel.text = travelData.description
         
         // 평점 별
         if let grade = travelData.grade {
