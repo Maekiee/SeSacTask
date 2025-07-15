@@ -498,9 +498,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="G5l-ws-lbi">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zEb-dy-ZtT">
+                                    <rect key="frame" x="16" y="24" width="361" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="DaA-IC-HSR"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="모두"/>
+                                        <segment title="국내"/>
+                                        <segment title="해외"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="segCategory:" destination="OfW-yi-pa7" eventType="valueChanged" id="2QK-sk-ZQ6"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="zEb-dy-ZtT" firstAttribute="top" secondItem="G5l-ws-lbi" secondAttribute="top" constant="24" id="4f3-bQ-9kt"/>
+                                <constraint firstAttribute="trailing" secondItem="zEb-dy-ZtT" secondAttribute="trailing" constant="16" id="IVC-wK-p2e"/>
+                                <constraint firstAttribute="bottom" secondItem="zEb-dy-ZtT" secondAttribute="bottom" constant="24" id="SMK-je-xM9"/>
+                                <constraint firstItem="zEb-dy-ZtT" firstAttribute="leading" secondItem="G5l-ws-lbi" secondAttribute="leading" constant="16" id="XBs-WF-htY"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yzg-eL-2Dt">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="44.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yzg-eL-2Dt" id="MhI-Ai-Na7">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
@@ -517,7 +544,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOu-pP-4UL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590" y="2118"/>
+            <point key="canvasLocation" x="588.54961832061065" y="2117.605633802817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nmS-Rs-V9V">
@@ -537,11 +564,11 @@
             </objects>
             <point key="canvasLocation" x="1800.7633587786258" y="1116.9014084507044"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--인기 도시-->
         <scene sceneID="CSS-2g-BVX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pCb-JP-Pd5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="TPr-CT-47h"/>
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="magnifyingglass" catalog="system" id="TPr-CT-47h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Trr-VU-k7T">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
