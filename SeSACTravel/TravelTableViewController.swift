@@ -1,10 +1,10 @@
 import UIKit
 import Kingfisher
 
-
 class TravelTableViewController: UITableViewController {
     var travelInfo = TravelInfo()
     let colors: [UIColor] = [.blue, .green, .yellow, .cyan, .lightGray]
+    let sb = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,11 +12,12 @@ class TravelTableViewController: UITableViewController {
 
         let xib = UINib(nibName: "AdTableViewCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: "AdTableViewCell")
-        
+    
         let cardTableViewCellXIB = UINib(nibName: "TravelCardTableViewCell", bundle: nil)
         tableView.register(cardTableViewCellXIB, forCellReuseIdentifier: "TravelCardTableViewCell")
-        
         tableView.rowHeight = 164
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,11 +53,11 @@ class TravelTableViewController: UITableViewController {
             return cardCell
         }
     }
-    
+    // 셀 터치
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if travelInfo.travel[indexPath.row].ad {
-            showToast()
-        }
+        let isAd = travelInfo.travel[indexPath.row].ad
+        let vc = sortViewController(isAd)
+        isAd ? present(vc, animated: true) : navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func likedTapped(sender: UIButton) {
@@ -64,4 +65,15 @@ class TravelTableViewController: UITableViewController {
         tableView.reloadData()
        
     }
+    
+    func sortViewController(_ isAd: Bool) -> UIViewController {
+        if isAd {
+            return sb.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+        } else {
+            return sb.instantiateViewController(withIdentifier: "TourSpotViewController") as! TourSpotViewController
+        }
+        
+    }
+    
+    
 }
