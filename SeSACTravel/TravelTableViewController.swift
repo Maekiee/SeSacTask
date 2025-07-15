@@ -57,7 +57,14 @@ class TravelTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let isAd = travelInfo.travel[indexPath.row].ad
         let vc = sortViewController(isAd)
-        isAd ? present(vc, animated: true) : navigationController?.pushViewController(vc, animated: true)
+        if isAd {
+//            let nav = UINavigationController(rootViewController: vc)
+            
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        } else {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @objc func likedTapped(sender: UIButton) {
@@ -77,3 +84,4 @@ class TravelTableViewController: UITableViewController {
     
     
 }
+
