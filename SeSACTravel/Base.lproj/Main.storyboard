@@ -21,6 +21,7 @@
                         <segue destination="L6Z-xp-xue" kind="relationship" relationship="viewControllers" id="ysx-wC-Olz"/>
                         <segue destination="KbP-pO-HpO" kind="relationship" relationship="viewControllers" id="PYD-kw-e5x"/>
                         <segue destination="1bC-DA-dPF" kind="relationship" relationship="viewControllers" id="b1Q-r5-ol6"/>
+                        <segue destination="pCb-JP-Pd5" kind="relationship" relationship="viewControllers" id="1ti-0y-Mxt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbc-hN-hul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -468,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ok6-FY-FSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2727" y="1827"/>
+            <point key="canvasLocation" x="3521" y="1117"/>
         </scene>
         <!--도시 상세-->
         <scene sceneID="mlU-sW-BW5">
@@ -489,6 +490,35 @@
             </objects>
             <point key="canvasLocation" x="-350" y="1363"/>
         </scene>
+        <!--Search Table View Controller-->
+        <scene sceneID="uIy-w3-OPu">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchTableViewController" id="OfW-yi-pa7" customClass="SearchTableViewController" customModule="SeSACTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Iwx-RT-hKm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yzg-eL-2Dt">
+                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yzg-eL-2Dt" id="MhI-Ai-Na7">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OfW-yi-pa7" id="m6y-Eb-Nm6"/>
+                            <outlet property="delegate" destination="OfW-yi-pa7" id="H2K-yZ-ao0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hln-Ra-fDM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOu-pP-4UL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590" y="2118"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="nmS-Rs-V9V">
             <objects>
@@ -507,6 +537,25 @@
             </objects>
             <point key="canvasLocation" x="1800.7633587786258" y="1116.9014084507044"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CSS-2g-BVX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pCb-JP-Pd5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="TPr-CT-47h"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Trr-VU-k7T">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OfW-yi-pa7" kind="relationship" relationship="rootViewController" id="RPh-zw-Tho"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aks-ud-eXq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422.13740458015263" y="2118.3098591549297"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane.departure" catalog="system" width="128" height="84"/>
@@ -516,6 +565,7 @@
         <image name="hand.raised" catalog="system" width="128" height="128"/>
         <image name="hand.raised.fill" catalog="system" width="128" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
