@@ -34,8 +34,7 @@ class MagazineTableViewController: UITableViewController {
         cell.thumbnailImageView.kf.setImage(with: thumbnailUrl)
         cell.titleLabel.text = magazineData.magazine[indexPath.row].title
         cell.subtitleLabel.text = magazineData.magazine[indexPath.row].subtitle
-        cell.titleLabel.numberOfLines = 0
-        cell.subtitleLabel.numberOfLines = 0
+        
     
         return cell
     }

@@ -16,7 +16,8 @@ class MagazineTableViewCell: UITableViewCell {
         thumbnailImageView.backgroundColor = .lightGray
         thumbnailImageView.contentMode = .scaleAspectFill
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        titleLabel.numberOfLines = 2
+        titleLabel.numberOfLines = 0
+        subtitleLabel.numberOfLines = 0
         subtitleLabel.font = UIFont.systemFont(ofSize: 12)
         subtitleLabel.textColor = .gray
         dateLabel.font = UIFont.systemFont(ofSize: 12)
