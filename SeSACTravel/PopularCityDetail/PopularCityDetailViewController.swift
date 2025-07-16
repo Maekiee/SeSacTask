@@ -8,21 +8,23 @@ class PopularCityDetailViewController: UIViewController {
     @IBOutlet var cityEnNameLabel: UILabel!
     @IBOutlet var cityTagLable: UILabel!
     
-    var cityImage = ""
-    var cityText = ""
-    var cityEnText = ""
-    var cityTagText = ""
+    var cityInifo = City(
+        city_name: "",
+        city_english_name: "",
+        city_explain: "",
+        city_image: "",
+        domestic_travel: false
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
         
-        let imageUrl = URL(string: cityImage)
+        let imageUrl = URL(string: cityInifo.city_image)
         cityImageview.kf.setImage(with: imageUrl)
-        cityNameLabel.text = cityText
-        cityEnNameLabel.text = cityEnText
-        cityTagLable.text = cityTagText
-    
+        cityNameLabel.text = cityInifo.city_name
+        cityEnNameLabel.text = cityInifo.city_english_name
+        cityTagLable.text = cityInifo.city_explain
     }
     
     
@@ -35,8 +37,7 @@ class PopularCityDetailViewController: UIViewController {
         cityEnNameLabel.font = .boldSystemFont(ofSize: 20)
         
         cityTagLable.textColor = .black
-        cityTagLable.numberOfLines = 0
-        
+        cityTagLable.numberOfLines = 0   
     }
 
 

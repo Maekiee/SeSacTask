@@ -2,17 +2,18 @@
 import UIKit
 
 class PopularCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var categorySegmentedControl: UISegmentedControl!
     @IBOutlet var populerCityTableView: UITableView!
     
+    static let popularCityCellIdentifier: String = "PopularCityTableViewCell"
+    static let detailVcIdentifier: String = "PopularCityDetailViewController"
+    
     let cityList = CityInfo().city
     var displayOnCityList: [City] = []
     var currentCategory: CityType = .all
-    static let identifier: String = "PopularCityTableViewCell"
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,12 +22,12 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     
     func configureTableView() {
         title = "인기 도시"
-        let xib = UINib(nibName: PopularCityViewController.identifier, bundle: nil)
-        populerCityTableView.register(xib, forCellReuseIdentifier: PopularCityViewController.identifier)
+        let xib = UINib(nibName: PopularCityViewController.popularCityCellIdentifier, bundle: nil)
+        populerCityTableView.register(xib, forCellReuseIdentifier: PopularCityViewController.popularCityCellIdentifier)
         populerCityTableView.delegate = self
         populerCityTableView.dataSource = self
         displayOnCityList = cityList
-        populerCityTableView.rowHeight = 200
+        populerCityTableView.rowHeight = UITableView.automaticDimension
     }
     
     
@@ -36,7 +37,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cityRow = displayOnCityList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityViewController.identifier, for: indexPath) as! PopularCityTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityViewController.popularCityCellIdentifier, for: indexPath) as! PopularCityTableViewCell
         
         
         cell.configureCell(cityData: cityRow)
@@ -45,12 +46,9 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PopularCityDetailViewController") as! PopularCityDetailViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: PopularCityViewController.detailVcIdentifier) as! PopularCityDetailViewController
         
-        vc.cityImage = displayOnCityList[indexPath.row].city_image
-        vc.cityText = displayOnCityList[indexPath.row].city_name
-        vc.cityEnText = displayOnCityList[indexPath.row].city_english_name
-        vc.cityTagText = displayOnCityList[indexPath.row].city_explain
+        vc.cityInifo = displayOnCityList[indexPath.row]
         
         present(vc, animated: true)
     }
@@ -71,11 +69,10 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         case CityType.international:
             displayOnCityList = cityList.filter { !$0.domestic_travel }
             populerCityTableView.reloadData()
-        default:
-            displayOnCityList = cityList
-            break
         }
     }
+    
+    
     
 
 
