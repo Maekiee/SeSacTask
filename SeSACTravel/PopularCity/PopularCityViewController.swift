@@ -45,6 +45,14 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PopularCityDetailViewController") as! PopularCityDetailViewController
+        
+        vc.cityImage = displayOnCityList[indexPath.row].city_image
+        vc.cityText = displayOnCityList[indexPath.row].city_name
+        vc.cityEnText = displayOnCityList[indexPath.row].city_english_name
+        vc.cityTagText = displayOnCityList[indexPath.row].city_explain
+        
+        present(vc, animated: true)
     }
     
     
