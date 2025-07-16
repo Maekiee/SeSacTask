@@ -42,7 +42,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sya-QH-yn6">
-                                <rect key="frame" x="206.33333333333331" y="8" width="100.66666666666669" height="28"/>
+                                <rect key="frame" x="205.33333333333334" y="8" width="100.66666666666666" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-Os-bC6">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="28"/>
@@ -92,7 +92,11 @@
                     <constraint firstItem="Dc0-Oc-WxH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7l3-uO-kUT"/>
                     <constraint firstItem="Dc0-Oc-WxH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="L4o-nA-pRX"/>
                     <constraint firstItem="Dc0-Oc-WxH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ObR-XC-Aq2"/>
+                    <constraint firstItem="Dc0-Oc-WxH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="UDX-LV-h6N"/>
+                    <constraint firstAttribute="bottom" secondItem="Dc0-Oc-WxH" secondAttribute="bottom" constant="16" id="YFK-dk-ILH"/>
                     <constraint firstAttribute="trailing" secondItem="Dc0-Oc-WxH" secondAttribute="trailing" constant="16" id="awa-d0-gFy"/>
+                    <constraint firstItem="Dc0-Oc-WxH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hd9-9l-8Sy"/>
+                    <constraint firstAttribute="trailing" secondItem="Dc0-Oc-WxH" secondAttribute="trailing" constant="16" id="irc-uD-ETW"/>
                     <constraint firstAttribute="bottom" secondItem="Dc0-Oc-WxH" secondAttribute="bottom" constant="16" id="uVU-4X-o3j"/>
                     <constraint firstItem="Dc0-Oc-WxH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xFA-7D-PZM"/>
                 </constraints>

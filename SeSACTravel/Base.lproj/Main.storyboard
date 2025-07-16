@@ -544,7 +544,68 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOu-pP-4UL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588.54961832061065" y="2117.605633802817"/>
+            <point key="canvasLocation" x="798" y="3151"/>
+        </scene>
+        <!--Popular City View Controller-->
+        <scene sceneID="bbU-TE-WX3">
+            <objects>
+                <viewController storyboardIdentifier="PopularCityViewController" id="3gg-md-scT" customClass="PopularCityViewController" customModule="SeSACTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRs-ys-rxO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lKb-l6-YlD">
+                                <rect key="frame" x="16" y="151" width="361" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="xdX-xk-ijV"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedCityCategoryControl:" destination="3gg-md-scT" eventType="valueChanged" id="RAu-wu-1em"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqu-Ay-e2v">
+                                <rect key="frame" x="16" y="111" width="361" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="QTG-N0-6hF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-PS-Vg6">
+                                <rect key="frame" x="16" y="183" width="361" height="586"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Ru-yG-7jR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Ru-yG-7jR" firstAttribute="trailing" secondItem="zNV-PS-Vg6" secondAttribute="trailing" constant="16" id="4e8-hg-esb"/>
+                            <constraint firstItem="zNV-PS-Vg6" firstAttribute="top" secondItem="lKb-l6-YlD" secondAttribute="bottom" id="6D3-ib-8jw"/>
+                            <constraint firstItem="lKb-l6-YlD" firstAttribute="top" secondItem="zqu-Ay-e2v" secondAttribute="bottom" constant="8" id="DNM-bO-vk9"/>
+                            <constraint firstItem="lKb-l6-YlD" firstAttribute="leading" secondItem="4Ru-yG-7jR" secondAttribute="leading" constant="16" id="Hq3-oR-K9a"/>
+                            <constraint firstItem="zNV-PS-Vg6" firstAttribute="leading" secondItem="4Ru-yG-7jR" secondAttribute="leading" constant="16" id="QG2-GN-nRB"/>
+                            <constraint firstItem="zqu-Ay-e2v" firstAttribute="top" secondItem="4Ru-yG-7jR" secondAttribute="top" constant="8" id="QQS-YN-w5g"/>
+                            <constraint firstItem="4Ru-yG-7jR" firstAttribute="trailing" secondItem="zqu-Ay-e2v" secondAttribute="trailing" constant="16" id="TFv-bj-K4X"/>
+                            <constraint firstItem="4Ru-yG-7jR" firstAttribute="bottom" secondItem="zNV-PS-Vg6" secondAttribute="bottom" id="U9g-cG-bDM"/>
+                            <constraint firstItem="4Ru-yG-7jR" firstAttribute="trailing" secondItem="lKb-l6-YlD" secondAttribute="trailing" constant="16" id="Wsn-wc-mH6"/>
+                            <constraint firstItem="zqu-Ay-e2v" firstAttribute="leading" secondItem="4Ru-yG-7jR" secondAttribute="leading" constant="16" id="zDi-zp-bEI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mxf-Ly-Ekd"/>
+                    <connections>
+                        <outlet property="categorySegmentedControl" destination="lKb-l6-YlD" id="zn5-Sj-mA9"/>
+                        <outlet property="populerCityTableView" destination="zNV-PS-Vg6" id="jhp-kV-5qS"/>
+                        <outlet property="searchTextField" destination="zqu-Ay-e2v" id="Lby-RP-fIJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31B-6y-HIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="524" y="2299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nmS-Rs-V9V">
@@ -576,12 +637,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="OfW-yi-pa7" kind="relationship" relationship="rootViewController" id="RPh-zw-Tho"/>
+                        <segue destination="3gg-md-scT" kind="relationship" relationship="rootViewController" id="pP5-7b-doc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aks-ud-eXq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-422.13740458015263" y="2118.3098591549297"/>
+            <point key="canvasLocation" x="-479" y="2299"/>
         </scene>
     </scenes>
     <resources>
