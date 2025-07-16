@@ -38,8 +38,13 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         let cityRow = displayOnCityList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityViewController.identifier, for: indexPath) as! PopularCityTableViewCell
         
+        
         cell.configureCell(cityData: cityRow)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function)
     }
     
     

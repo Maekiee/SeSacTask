@@ -19,6 +19,7 @@ class PopularCityTableViewCell: UITableViewCell {
     }
     
     func setBasicCellStyle() {
+        selectionStyle = .none
         thumbnailImageview.backgroundColor = .lightGray
         thumbnailImageview.contentMode = .scaleAspectFill
         
