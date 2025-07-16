@@ -62,7 +62,9 @@ class TravelTableViewController: UITableViewController {
         let travelData = travelList[indexPath.row]
         let vc = sortViewController(travelData.ad)
         if travelData.ad {
-            vc.modalPresentationStyle = .fullScreen
+            let myAdViewController = vc as! AdDetailViewController
+            myAdViewController.modalPresentationStyle = .fullScreen
+            myAdViewController.adText = travelData.title ?? ""
             present(vc, animated: true)
         } else {
             let myViewController = vc as! TourSpotViewController

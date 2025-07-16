@@ -15,18 +15,14 @@ class TourSpotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "관광지 화면"
-        
-        
         configureUI()
     }
     
     func configureUI() {
-//        let url = "https://images.unsplash.com/photo-1715880005923-0013a6820a72?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title = "관광지 화면"
         
         
         let thumbnailUrl = URL(string: imageUrl)
-        
         thumbnailImageView.kf.setImage(with: thumbnailUrl)
         thumbnailImageView.layer.cornerRadius = 12
         thumbnailImageView.contentMode = .scaleAspectFill
@@ -36,6 +32,7 @@ class TourSpotViewController: UIViewController {
         
         subtitleLabel.font = .boldSystemFont(ofSize: 20)
         subtitleLabel.text =  travelDescription
+        subtitleLabel.numberOfLines = 0
         
         viewOtherButton.layer.cornerRadius = viewOtherButton.frame.height / 2
         viewOtherButton.tintColor = .white
