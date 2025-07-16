@@ -2,39 +2,43 @@ import UIKit
 import Kingfisher
 
 class TravelTableViewController: UITableViewController {
-    var travelInfo = TravelInfo()
+    var travelList = TravelInfo().travel
     let colors: [UIColor] = [.blue, .green, .yellow, .cyan, .lightGray]
     let sb = UIStoryboard(name: "Main", bundle: nil)
+    static let adIdentifier: String = "AdTableViewCell"
+    static let travelCardIdentifier: String = "TravelCardTableViewCell"
+    static let adDetailIdentifier: String = "AdDetailViewController"
+    static let tourSpotIdentifier: String = "TourSpotViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "SeSAC Travel"
 
-        let xib = UINib(nibName: "AdTableViewCell", bundle: nil)
-        tableView.register(xib, forCellReuseIdentifier: "AdTableViewCell")
+        let xib = UINib(nibName: TravelTableViewController.adIdentifier, bundle: nil)
+        tableView.register(xib, forCellReuseIdentifier: TravelTableViewController.adIdentifier)
     
-        let cardTableViewCellXIB = UINib(nibName: "TravelCardTableViewCell", bundle: nil)
-        tableView.register(cardTableViewCellXIB, forCellReuseIdentifier: "TravelCardTableViewCell")
+        let cardTableViewCellXIB = UINib(nibName: TravelTableViewController.travelCardIdentifier, bundle: nil)
+        tableView.register(cardTableViewCellXIB, forCellReuseIdentifier: TravelTableViewController.travelCardIdentifier)
         tableView.rowHeight = 164
         
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return travelInfo.travel.count
+        return travelList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let travelData = travelInfo.travel[indexPath.row]
+        let travelData = travelList[indexPath.row]
         
         if travelData.ad {
-            let adCell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath)  as! AdTableViewCell
+            let adCell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewController.adIdentifier, for: indexPath)  as! AdTableViewCell
             // 광고
             adCell.setAdCellBackground(color: colors.randomElement() ?? .lightGray)
             adCell.setAdLabel(row: travelData)
             return adCell
         } else {
-            let cardCell = tableView.dequeueReusableCell(withIdentifier: "TravelCardTableViewCell", for: indexPath)  as! TravelCardTableViewCell
+            let cardCell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewController.travelCardIdentifier, for: indexPath)  as! TravelCardTableViewCell
             
             // title
             cardCell.setTitle(row: travelData)
@@ -53,31 +57,33 @@ class TravelTableViewController: UITableViewController {
             return cardCell
         }
     }
-    // 셀 터치
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let isAd = travelInfo.travel[indexPath.row].ad
-        let vc = sortViewController(isAd)
-        if isAd {
-//            let nav = UINavigationController(rootViewController: vc)
-            
+        let travelData = travelList[indexPath.row]
+        let vc = sortViewController(travelData.ad)
+        if travelData.ad {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         } else {
+            let myViewController = vc as! TourSpotViewController
+            myViewController.travelTitle = travelData.title ?? ""
+            myViewController.travelDescription = travelData.description ?? ""
+            myViewController.imageUrl = travelData.travel_image ?? ""
             navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     @objc func likedTapped(sender: UIButton) {
-        travelInfo.travel[sender.tag].like?.toggle()
+        travelList[sender.tag].like?.toggle()
         tableView.reloadData()
        
     }
     
     func sortViewController(_ isAd: Bool) -> UIViewController {
         if isAd {
-            return sb.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+            return sb.instantiateViewController(withIdentifier: TravelTableViewController.adDetailIdentifier) as! AdDetailViewController
         } else {
-            return sb.instantiateViewController(withIdentifier: "TourSpotViewController") as! TourSpotViewController
+            return sb.instantiateViewController(withIdentifier: TravelTableViewController.tourSpotIdentifier) as! TourSpotViewController
         }
         
     }

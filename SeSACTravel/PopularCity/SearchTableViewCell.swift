@@ -8,6 +8,8 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet var cityTitleLabel: [UILabel]!
     @IBOutlet var verticalDivider: UIView!
     @IBOutlet var cityTagContainer: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         verticalDivider.backgroundColor = .white
