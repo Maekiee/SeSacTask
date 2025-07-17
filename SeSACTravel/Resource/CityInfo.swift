@@ -1,4 +1,3 @@
-//
 import Foundation
  
 struct City {
@@ -110,11 +109,103 @@ struct CityInfo {
             domestic_travel: false
         ),
         City(
-            city_name: "대전",
-            city_english_name: "Daejeon",
-            city_explain: "대전, 성심당",
+            city_name: "독일",
+            city_english_name: "Germany",
+            city_explain: "베를린, 프랑크푸르트, 뮌헨",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        City(
+            city_name: "영국",
+            city_english_name: "England",
+            city_explain: "런던, 멘체스터, 토트넘",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
+        City(
+            city_name: "속초",
+            city_english_name: "Daejeon",
+            city_explain: "해변",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: true
+        ),
+        City(
+            city_name: "목포",
+            city_english_name: "mockfo",
+            city_explain: "목포마을",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: true
+        ),
+        City(
+            city_name: "경기도",
+            city_english_name: "Daejeon",
+            city_explain: "남양주, 김포",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: true
+        ),
+        City(
+            city_name: "울산",
+            city_english_name: "Daejeon",
+            city_explain: "울산, 울산도시",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: true
+        ),
+        City(
+            city_name: "독도",
+            city_english_name: "Daejeon",
+            city_explain: "독도새우, 독도는 우리땅",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: true
+        ),
+        City(
+            city_name: "울릉도",
+            city_english_name: "Daejeon",
+            city_explain: "울릉도, 앞바다",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: true
+        ),
+        City(
+            city_name: "스페인",
+            city_english_name: "Daejeon",
+            city_explain: "마드리드, 바로셀로나, 대성당",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        City(
+            city_name: "브라질",
+            city_english_name: "Daejeon",
+            city_explain: "상파울로, 아마존",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        City(
+            city_name: "스웨덴",
+            city_english_name: "Daejeon",
+            city_explain: "스톡홀름, 노벨 박물관",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        City(
+            city_name: "폴란드",
+            city_english_name: "Daejeon",
+            city_explain: "바르샤바, 쇼팽박물관",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        City(
+            city_name: "체코",
+            city_english_name: "Daejeon",
+            city_explain: "프라하, 무슨무슨성당",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        City(
+            city_name: "도쿄",
+            city_english_name: "Tokyo",
+            city_explain: "도쿄뭐시기, 도쿄마을",
+            city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            domestic_travel: false
+        ),
+        
     ]
 }

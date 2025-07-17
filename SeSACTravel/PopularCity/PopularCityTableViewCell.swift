@@ -3,8 +3,6 @@ import UIKit
 import Kingfisher
 
 class PopularCityTableViewCell: UITableViewCell {
-    
-    
     @IBOutlet var thumbnailImageview: UIImageView!
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var cityTabContainer: UIView!
@@ -14,14 +12,13 @@ class PopularCityTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setBasicCellStyle()
-        
-        
     }
     
     func setBasicCellStyle() {
         selectionStyle = .none
         thumbnailImageview.backgroundColor = .lightGray
         thumbnailImageview.contentMode = .scaleAspectFill
+        thumbnailImageview.clipsToBounds = true
         
         cityTabContainer.backgroundColor = .black.withAlphaComponent(0.5)
         cityTagLabel.textColor = .lightGray

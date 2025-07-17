@@ -10,6 +10,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     static let detailVcIdentifier: String = "PopularCityDetailViewController"
     
     let cityList = CityInfo().city
+    // property observer
     var displayOnCityList: [City] = []
     var currentCategory: CityType = .all
     
