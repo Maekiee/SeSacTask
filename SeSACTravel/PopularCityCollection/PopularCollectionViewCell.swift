@@ -31,7 +31,7 @@ class PopularCollectionViewCell: UICollectionViewCell {
         let krName = cityItem.city_name
         let enNmae = cityItem.city_english_name
         cityImageView.kf.setImage(with: imageUrl)
-        cityNameTitle.text = "\(krName)|\(enNmae)"
+        cityNameTitle.text = "\(krName) | \(enNmae)"
         explainLabel.text = cityItem.city_explain
     }
 

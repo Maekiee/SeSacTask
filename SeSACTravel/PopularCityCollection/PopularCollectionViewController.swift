@@ -5,10 +5,13 @@ class PopularCollectionViewController: UIViewController, UICollectionViewDelegat
     @IBOutlet var segmentedCategory: UISegmentedControl!
     @IBOutlet var myCollectionView: UICollectionView!
     static let cellIdentifier: String = "PopularCollectionViewCell"
-    
     let cityList = CityInfo().city
     
-    var displayOnCityList: [City] = []
+    var displayOnCityList: [City] = [] {
+        didSet {
+            myCollectionView.reloadData()
+        }
+    }
     var currentCategory: CityType = .all
     
     override func viewDidLoad() {
@@ -56,17 +59,13 @@ class PopularCollectionViewController: UIViewController, UICollectionViewDelegat
     @IBAction func categorySegTapped(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         currentCategory = CityType.allCases[index]
-        
         switch currentCategory {
         case CityType.all:
             displayOnCityList = cityList
-            myCollectionView.reloadData()
         case CityType.domestic:
             displayOnCityList = cityList.filter { $0.domestic_travel }
-            myCollectionView.reloadData()
         case CityType.international:
             displayOnCityList = cityList.filter { !$0.domestic_travel }
-            myCollectionView.reloadData()
         }
         
     }
