@@ -124,77 +124,77 @@ struct CityInfo {
         ),
         City(
             city_name: "속초",
-            city_english_name: "Daejeon",
+            city_english_name: "Sokcho",
             city_explain: "해변",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
         City(
             city_name: "목포",
-            city_english_name: "mockfo",
+            city_english_name: "Mokpo",
             city_explain: "목포마을",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
         City(
             city_name: "경기도",
-            city_english_name: "Daejeon",
-            city_explain: "남양주, 김포",
+            city_english_name: "Gyeonggido",
+            city_explain: "남양주, 수원",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
         City(
             city_name: "울산",
-            city_english_name: "Daejeon",
+            city_english_name: "Ulsan",
             city_explain: "울산, 울산도시",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
         City(
             city_name: "독도",
-            city_english_name: "Daejeon",
+            city_english_name: "Dokdo",
             city_explain: "독도새우, 독도는 우리땅",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
         City(
             city_name: "울릉도",
-            city_english_name: "Daejeon",
+            city_english_name: "Wollongdo",
             city_explain: "울릉도, 앞바다",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: true
         ),
         City(
             city_name: "스페인",
-            city_english_name: "Daejeon",
+            city_english_name: "Spain",
             city_explain: "마드리드, 바로셀로나, 대성당",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: false
         ),
         City(
             city_name: "브라질",
-            city_english_name: "Daejeon",
+            city_english_name: "Brazil",
             city_explain: "상파울로, 아마존",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: false
         ),
         City(
             city_name: "스웨덴",
-            city_english_name: "Daejeon",
+            city_english_name: "Sweden",
             city_explain: "스톡홀름, 노벨 박물관",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: false
         ),
         City(
             city_name: "폴란드",
-            city_english_name: "Daejeon",
+            city_english_name: "Poland",
             city_explain: "바르샤바, 쇼팽박물관",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: false
         ),
         City(
             city_name: "체코",
-            city_english_name: "Daejeon",
+            city_english_name: "Czech",
             city_explain: "프라하, 무슨무슨성당",
             city_image: "https://plus.unsplash.com/premium_photo-1695084221958-079096c96e05?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             domestic_travel: false

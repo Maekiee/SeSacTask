@@ -17,7 +17,6 @@ class PopularCollectionViewController: UIViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
     }
     
     func configure() {
@@ -41,6 +40,37 @@ class PopularCollectionViewController: UIViewController, UICollectionViewDelegat
         myCollectionView.collectionViewLayout = layout
     }
     
+    func sortItemByCatetory() {
+        switch currentCategory {
+        case CityType.all:
+            displayOnCityList = cityList
+        case CityType.domestic:
+            displayOnCityList = cityList.filter { $0.domestic_travel }
+        case CityType.international:
+            displayOnCityList = cityList.filter { !$0.domestic_travel }
+        }
+    }
+    
+    func searchingCity(isRealTime: Bool) {
+        guard let inputValue = searchTextField.text else { return }
+        if inputValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            isRealTime ? sortItemByCatetory() : print("얼럿 띄우기")
+        } else {
+            let filterList:[City] = displayOnCityList.filter { item in
+                let explainList = item.city_explain.split(separator: ", ").map { String($0) }
+                return item.city_name == inputValue || item.city_english_name.caseInsensitiveCompare(inputValue) == .orderedSame || explainList.contains(inputValue)
+            }
+            
+            if isRealTime {
+                if !filterList.isEmpty {
+                    displayOnCityList = filterList
+                }
+            } else {
+                displayOnCityList = filterList
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return displayOnCityList.count
     }
@@ -54,20 +84,18 @@ class PopularCollectionViewController: UIViewController, UICollectionViewDelegat
         return cell
     }
     
+    @IBAction func EditingChangedTextField(_ sender: UITextField) {
+        searchingCity(isRealTime: true)
+    }
     
+    
+    @IBAction func DidEndOnExitTextField(_ sender: UITextField) {
+        searchingCity(isRealTime: false)
+    }
     
     @IBAction func categorySegTapped(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         currentCategory = CityType.allCases[index]
-        switch currentCategory {
-        case CityType.all:
-            displayOnCityList = cityList
-        case CityType.domestic:
-            displayOnCityList = cityList.filter { $0.domestic_travel }
-        case CityType.international:
-            displayOnCityList = cityList.filter { !$0.domestic_travel }
-        }
-        
+        sortItemByCatetory()
     }
-    
 }

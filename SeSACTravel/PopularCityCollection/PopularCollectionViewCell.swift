@@ -16,6 +16,7 @@ class PopularCollectionViewCell: UICollectionViewCell {
     func configBasicUI() {
         cityImageView.contentMode = .scaleToFill
         cityImageView.backgroundColor = .lightGray
+        cityImageView.layer.cornerRadius = cityImageView.frame.height / 2
         
         cityNameTitle.numberOfLines = 0
         cityNameTitle.font = .systemFont(ofSize: 14, weight: .semibold)

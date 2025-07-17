@@ -759,6 +759,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DidEndOnExitTextField:" destination="wuQ-IB-8R5" eventType="editingDidEndOnExit" id="VG4-yU-GJn"/>
+                                    <action selector="EditingChangedTextField:" destination="wuQ-IB-8R5" eventType="editingChanged" id="h3t-vG-BYp"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hsw-8o-t6N"/>
