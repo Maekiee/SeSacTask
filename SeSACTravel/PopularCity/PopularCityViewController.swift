@@ -24,6 +24,7 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         title = "인기 도시"
         let xib = UINib(nibName: PopularCityViewController.popularCityCellIdentifier, bundle: nil)
         populerCityTableView.register(xib, forCellReuseIdentifier: PopularCityViewController.popularCityCellIdentifier)
+
         populerCityTableView.delegate = self
         populerCityTableView.dataSource = self
         displayOnCityList = cityList

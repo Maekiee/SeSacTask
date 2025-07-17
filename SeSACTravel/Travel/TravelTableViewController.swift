@@ -77,7 +77,8 @@ class TravelTableViewController: UITableViewController {
     
     @objc func likedTapped(sender: UIButton) {
         travelList[sender.tag].like?.toggle()
-        tableView.reloadData()
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
+//        tableView.reloadData()
        
     }
     
